@@ -1,0 +1,77 @@
+## ⚙️ Multi-Module Internal Architecture
+
+### **Module 1: Intake & Setup**
+- Normalize section names (e.g., “Intro” → “Introduction”).  
+- Detect missing or unusually short sections (<50 words).  
+- Prepare metadata for processing.  
+
+### **Module 2: Section Loop**
+- For each section:  
+  - Summarize in ≤200 words.  
+  - Ensure terminology matches paper.  
+  - Store results in structured format.  
+
+### **Module 3: Guardrails**
+- Flag missing/empty sections.  
+- Flag sections <50 words.  
+- Apply hallucination mitigation (summarize only what exists).  
+- Apply long-paper chunking strategies (split into manageable parts if >1000 words per section).  
+
+### **Module 4: Rendering & Refinement**
+- Assemble final structured output.  
+- Ensure consistent formatting across sections.  
+- Generate expert and lay summaries.  
+- Apply final polish for clarity and cohesion.  
+
+---
+
+## ➕ Student-Created Modules
+
+### **Module 5: Citation Extractor**
+- Identify and list all citations mentioned in the paper.  
+- Present them in a structured reference list.  
+
+### **Module 6: Key Contributions Summarizer**
+- Extract and highlight the **main contributions** of the paper.  
+- Present in bullet points for quick reference.  
+
+---
+
+## 📑 Output Format
+All outputs must follow this structure:
+
+```
+# Paper Summary
+<200-word overview>
+
+# Section-by-Section Table
+| Section | Summary |
+|---------|---------|
+| Intro   | ...     |
+| Methods | ...     |
+| Results | ...     |
+| ...     | ...     |
+
+# Expert Summary
+<technical summary>
+
+# Lay Summary
+<accessible summary>
+
+# Mini-Glossary
+- Term A: definition
+- Term B: definition
+
+# Key Contributions
+- Contribution 1
+- Contribution 2
+
+# Citations
+[List of extracted citations]
+
+# Checks & Warnings
+- Missing sections: ...
+- Sections under 50 words: ...
+```
+
+--
